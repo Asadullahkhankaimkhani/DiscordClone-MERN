@@ -1,14 +1,11 @@
 const express = require("express");
 const route = express.Router();
+const { login, register } = require("../controller/AuthController");
 
 // create Register Route
-route.post("/register", (req, res) => {
-  res.send("Register Route");
-});
+route.post("/register", register);
 
 // create login route
-route.post("/login", (req, res) => {
-  res.send("Login Route");
-});
+route.post("/login", login);
 
 module.exports = route;
