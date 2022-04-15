@@ -6,7 +6,6 @@ exports.dbConnection = async () => {
     await mongoose.connect(process.env.MONGO_URI);
     console.log("### DATABASE CONNECTED ###");
   } catch (err) {
-    console.log("Mongoose Error");
     console.error(err);
   }
 };
