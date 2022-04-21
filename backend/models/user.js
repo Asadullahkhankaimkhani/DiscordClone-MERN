@@ -9,11 +9,11 @@ const userSchema = new mongoose.Schema({
   },
   password: {
     type: String,
-    minlength: 3,
-    maxlength: 30,
   },
   mail: {
     type: String,
     unique: true,
   },
 });
+
+module.exports = mongoose.model("User", userSchema);
