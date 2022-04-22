@@ -9,7 +9,6 @@ const BoxWrapper = styled("div")({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  // background: "#5865f2",
   backgroundImage: `url(${image})`,
   backgroundSize: "cover",
 });
