@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getAction } from "../../action/authActions";
+import { getAction } from "../../store/action/authActions";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 
