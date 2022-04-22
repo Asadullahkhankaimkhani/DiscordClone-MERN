@@ -4,12 +4,17 @@ import RegisterFooter from "../../components/RegisterPage/RegisterFooter";
 import RegisterPageInputs from "../../components/RegisterPage/RegisterPageInputs";
 import AuthBox from "../../shared/components/AuthBox";
 import { validateRegisterForm } from "../../shared/utils/validators";
+import { getAction } from "../../action/authActions";
+import { useHistory } from "react-router-dom";
+import { connect } from "react-redux";
 
-function Register() {
+function Register({ register }) {
   const [mail, setMail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [username, setUsername] = React.useState("");
   const [isFormValid, setIsFormValid] = React.useState(false);
+
+  const history = useHistory();
 
   useEffect(() => {
     setIsFormValid(validateRegisterForm({ mail, username, password }));
@@ -17,7 +22,7 @@ function Register() {
   }, [mail, password, isFormValid, username]);
 
   const handleRegister = () => {
-    console.log("Register");
+    register({ mail, username, password }, history);
   };
 
   return (
@@ -41,4 +46,10 @@ function Register() {
   );
 }
 
-export default Register;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    ...getAction(dispatch),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Register);
