@@ -11,6 +11,7 @@ import {
 import Login from "./pages/AuthPages/Login";
 import Register from "./pages/AuthPages/Register";
 import Dashboard from "./pages/Dashboard/Dashboard";
+import AlertNotification from "./shared/components/AlertNotification";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Redirect to="/dashboard" />
         </Route>
       </Switch>
+      <AlertNotification />
     </Router>
   );
 }
