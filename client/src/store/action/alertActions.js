@@ -3,7 +3,7 @@ const alertActions = {
   CLOSE_ALERT_MESSAGE: "ALERT_CLOSE_MESSAGE",
 };
 
-export const getAction = (dispatch) => {
+export const getActions = (dispatch) => {
   return {
     openAlertMessage: (content) => dispatch(openAlertMessage(content)),
     closeAlertMessage: () => dispatch(closeAlertMessage()),
