@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getActions } from "../../store/action/authActions";
+import { getAction } from "../../store/action/authActions";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 
@@ -40,7 +40,7 @@ function Login({ login }) {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    ...getActions(dispatch),
+    ...getAction(dispatch),
   };
 };
 

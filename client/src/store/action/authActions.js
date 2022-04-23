@@ -1,5 +1,4 @@
 import * as api from "../../apis/AuthApi";
-import { openAlertMessage } from "./alertActions";
 
 export const authActions = {
   SET_USER_DETAILS: "SET_USER_DETAILS",
@@ -12,7 +11,7 @@ const setUserDetails = (userDetails) => {
   };
 };
 
-export const getActions = (dispatch) => {
+export const getAction = (dispatch) => {
   return {
     login: (userDetails, history) => dispatch(login(userDetails, history)),
     register: (userDetails, history) =>
@@ -25,7 +24,7 @@ const login = (userDetails, history) => {
     const response = await api.login(userDetails);
     console.log(response);
     if (response.error) {
-      dispatch(openAlertMessage(response?.exception?.response?.data));
+      // Show Error
     } else {
       const { userDetails } = response?.data;
       localStorage.setItem("user", JSON.stringify(userDetails));
@@ -41,7 +40,7 @@ const register = (userDetails, history) => {
     const response = await api.register(userDetails);
     console.log(response);
     if (response.error) {
-      dispatch(openAlertMessage(response?.exception?.response?.data));
+      //show error
     } else {
       const { userDetails } = response?.data;
       localStorage.setItem("user", JSON.stringify(userDetails));
