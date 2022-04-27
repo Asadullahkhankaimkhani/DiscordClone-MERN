@@ -48,12 +48,12 @@ const PendingInvitationLListItem = ({
           >
             {username}
           </Typography>
+          <InvitationDecisionsButtons
+            disabled={buttonDisabled}
+            acceptInvitationHandler={handleAcceptInvitation}
+            rejectInvitationHandler={handleRejectInvitation}
+          />
         </Box>
-        <InvitationDecisionsButtons
-          disabled={buttonDisabled}
-          acceptInvitationHandler={handleAcceptInvitation}
-          rejectInvitationHandler={handleRejectInvitation}
-        />
       </div>
     </Tooltip>
   );
