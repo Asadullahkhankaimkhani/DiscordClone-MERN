@@ -24,7 +24,7 @@ export const register = async (data) => {
 };
 
 // secure routes
-const checkResponse = (exception) => {
+export const checkResponse = (exception) => {
   const responseCode = exception.response.status;
   if (responseCode) {
     (responseCode === 401 || responseCode === 403) && logout();

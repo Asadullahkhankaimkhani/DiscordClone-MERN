@@ -9,6 +9,7 @@ import AppBar from "../../components/AppBar/AppBar";
 import { logout } from "../../shared/utils/auth";
 import { connect } from "react-redux";
 import { getActions } from "../../store/action/authActions";
+import { connectWithSocketServer } from "../../RealTimeCommunication/socketConnection";
 
 const Wrapper = styled("div")({
   display: "flex",
@@ -25,6 +26,7 @@ function Dashboard({ setUserDetails }) {
       logout();
     } else {
       setUserDetails(JSON.parse(userDetails));
+      connectWithSocketServer(JSON.parse(userDetails));
     }
   }, []);
 

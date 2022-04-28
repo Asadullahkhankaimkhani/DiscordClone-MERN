@@ -6,7 +6,7 @@ const { dbConnection } = require("./db");
 const fs = require("fs");
 const morgan = require("morgan");
 
-const registerSocketServer = require("./socketServer");
+const socketServer = require("./socketServer");
 const PORT = process.env.PORT || process.env.API_PORT;
 
 const app = express();
@@ -19,7 +19,7 @@ fs.readdirSync("./routes").map((r) =>
 );
 
 const server = http.createServer(app);
-registerSocketServer(server);
+socketServer.registerSocketServer(server);
 dbConnection();
 
 server.listen(PORT, () => {
