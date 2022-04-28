@@ -5,18 +5,19 @@ export const authActions = {
   SET_USER_DETAILS: "SET_USER_DETAILS",
 };
 
-const setUserDetails = (userDetails) => {
-  return {
-    type: authActions.SET_USER_DETAILS,
-    userDetails,
-  };
-};
-
 export const getActions = (dispatch) => {
   return {
     login: (userDetails, history) => dispatch(login(userDetails, history)),
     register: (userDetails, history) =>
       dispatch(register(userDetails, history)),
+    setUserDetails: (userDetails) => dispatch(setUserDetails(userDetails)),
+  };
+};
+
+const setUserDetails = (userDetails) => {
+  return {
+    type: authActions.SET_USER_DETAILS,
+    userDetails,
   };
 };
 
