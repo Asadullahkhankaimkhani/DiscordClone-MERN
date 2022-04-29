@@ -5,7 +5,7 @@ const registerSocketServer = (server) => {
   const io = require("socket.io")(server, {
     cors: {
       path: "*",
-      methods: ["GET", "POST", "PUT", "DELETE"],
+      methods: ["GET", "POST"],
     },
   });
 
